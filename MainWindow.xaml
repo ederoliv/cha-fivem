@@ -41,7 +41,6 @@
                 <RowDefinition Height="35"/>
             </Grid.RowDefinitions>
 
-            <!-- Barra Superior envolvida em uma Border para acompanhar o arredondamento superior -->
             <Border Grid.Row="0" Background="#ECFBF8" CornerRadius="8,8,0,0">
                 <Grid MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
                     <Grid.ColumnDefinitions>
@@ -57,9 +56,7 @@
                            FontWeight="SemiBold"/>
 
                     <StackPanel Grid.Column="1" Orientation="Horizontal">
-                        <!-- Botão Minimizar com cantos superiores direitos alinhados -->
                         <Button Content="—" Width="45" Style="{StaticResource TopButtonStyle}" Click="MinimizeButton_Click"/>
-                        <!-- Botão Fechar com arredondamento no canto superior direito para não estourar a borda -->
                         <Button Content="✕" Width="45" Style="{StaticResource TopButtonStyle}" Click="CloseButton_Click" FontWeight="Bold">
                             <Button.Template>
                                 <ControlTemplate TargetType="Button">
@@ -76,12 +73,11 @@
             <Grid Grid.Row="1" Background="#FFFFFF" Margin="40,30,40,20">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="600">
 
-                    <TextBlock Text="Cha FiveM" 
-                               FontSize="32" 
-                               FontWeight="Bold" 
-                               Foreground="#007E5D" 
-                               HorizontalAlignment="Center"
-                               Margin="0,0,0,15"/>
+                    <Image Source="pack://application:,,,/assets/cha.png" 
+                           Width="100" Height="100" 
+                           Stretch="Uniform"
+                           HorizontalAlignment="Center"
+                           Margin="0,0,0,15"/>
 
                     <TextBlock 
                                FontSize="14" 

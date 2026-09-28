@@ -9,4 +9,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="assets\cha.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="assets\cha.png" />
+  </ItemGroup>
+
 </Project>

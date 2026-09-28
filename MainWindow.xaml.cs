@@ -25,9 +25,9 @@ namespace cha_fivem
         private void BtnLimpar_Click(object sender, RoutedEventArgs e)
         {
             if (CleanFiles())
-                MessageBox.Show("Files cleaned successfully!!");
+                MessageBox.Show("Limpeza realizada com sucesso!!");
             else
-                MessageBox.Show("Failed to clean files.");
+                MessageBox.Show("Houve algum erro ao tentar limpar os arquivos.");
         }
 
         private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)

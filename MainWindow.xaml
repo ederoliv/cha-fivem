@@ -84,7 +84,7 @@
                                Foreground="#555555"
                                TextWrapping="Wrap" 
                                TextAlignment="Center"
-                               LineaHeight="20"
+                               LineHeight="20"
                                Margin="0,0,0,30"><Run Text="Este é o utilitário de limpeza de arquivos do FiveM, ele limpa o cache e arquivos temporários para resolver bugs, travamentos ou otimizar o jogo, conhecido como 'tomar um chá'. Esta ferramenta é "/><Run Language="pt-br" Text="gratuita"/><Run Text=" e "/><Run Language="pt-br" Text="o"/><Run Text="pen "/><Run Language="pt-br" Text="s"/><Run Text="ource, você pode baixar ela ou saber como funciona no "/><Run Text="link"/><Run Text="."/></TextBlock>
 
                     <Button Content="Limpar Arquivos" 

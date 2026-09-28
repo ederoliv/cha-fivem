@@ -1,0 +1,135 @@
+﻿<Window x:Class="cha_fivem.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cha_fivem"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="480" Width="543"
+        WindowStyle="None" 
+        AllowsTransparency="True"
+        FontFamily="Segoe UI"
+        Background="Transparent">
+
+    <Window.Resources>
+        <Style x:Key="TopButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#007E5D"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#D2F5EE"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border BorderBrush="#D0D0D0" BorderThickness="1" CornerRadius="8" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+
+            <!-- Barra Superior envolvida em uma Border para acompanhar o arredondamento superior -->
+            <Border Grid.Row="0" Background="#ECFBF8" CornerRadius="8,8,0,0">
+                <Grid MouseLeftButtonDown="TitleBar_MouseLeftButtonDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="Comando de Higienização de Arquivos do FiveM - Cha FiveM" 
+                           VerticalAlignment="Center" 
+                           Margin="12,0,0,0" 
+                           Foreground="#007E5D" 
+                           FontSize="12"
+                           FontWeight="SemiBold"/>
+
+                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                        <!-- Botão Minimizar com cantos superiores direitos alinhados -->
+                        <Button Content="—" Width="45" Style="{StaticResource TopButtonStyle}" Click="MinimizeButton_Click"/>
+                        <!-- Botão Fechar com arredondamento no canto superior direito para não estourar a borda -->
+                        <Button Content="✕" Width="45" Style="{StaticResource TopButtonStyle}" Click="CloseButton_Click" FontWeight="Bold">
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="0,8,0,0">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1" Background="#FFFFFF" Margin="40,30,40,20">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" MaxWidth="600">
+
+                    <TextBlock Text="Cha FiveM" 
+                               FontSize="32" 
+                               FontWeight="Bold" 
+                               Foreground="#007E5D" 
+                               HorizontalAlignment="Center"
+                               Margin="0,0,0,15"/>
+
+                    <TextBlock 
+                               FontSize="14" 
+                               Foreground="#555555"
+                               TextWrapping="Wrap" 
+                               TextAlignment="Center"
+                               LineHeight="20"
+                               Margin="0,0,0,30"><Run Text="Este é o utilitário de limpeza de arquivos do FiveM, ele limpa o cache e arquivos temporários para resolver bugs, travamentos ou otimizar o jogo, conhecido como 'tomar um chá'. Esta ferramenta é "/><Run Language="pt-br" Text="gratuita"/><Run Text=" e "/><Run Language="pt-br" Text="o"/><Run Text="pen "/><Run Language="pt-br" Text="s"/><Run Text="ource, você pode baixar ela ou saber como funciona no "/><Run Text="link"/><Run Text="."/></TextBlock>
+
+                    <Button Content="Limpar Arquivos" 
+                            Width="200" Height="45" 
+                            Background="#007E5D" 
+                            Foreground="White" 
+                            FontSize="14" 
+                            FontWeight="SemiBold"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="BtnLimpar_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="6">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#006349"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+
+            <Border Grid.Row="2" Background="#FAFAFA" BorderBrush="#EEEEEE" BorderThickness="0,1,0,0" CornerRadius="0,0,8,8">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="12">
+                    <Run Text="Projeto Open Source desenvolvido por " Foreground="#666666"/>
+                    <Hyperlink NavigateUri="https://github.com/ederoliv/cha-fivem" RequestNavigate="Hyperlink_RequestNavigate" Foreground="#007E5D">
+                        <Run Text="Eder Oliveira"/>
+                    </Hyperlink>
+                </TextBlock>
+            </Border>
+
+        </Grid>
+    </Border>
+</Window>
